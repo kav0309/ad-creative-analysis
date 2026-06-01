@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indē Wild vs Plum — Ad Creative Analysis · Kavya Sinha</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --inde: #C8956C;
+    --plum: #6B3FA0;
+    --inde-light: #F5EDE4;
+    --plum-light: #EDE6F5;
+    --dark: #1A1410;
+    --mid: #5C4A3A;
+    --light: #FAF8F5;
+    --rule: #E8E0D5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    font-weight: 300;
+  }
+
+  /* ── HERO ── */
+  header {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--dark);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: var(--inde);
+    opacity: 0.08;
+    top: -100px; left: -100px;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: var(--plum);
+    opacity: 0.1;
+    bottom: -80px; right: -80px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--inde);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--inde);
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #B0A090;
+    max-width: 380px;
+    margin-bottom: 48px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+  }
+
+  .meta-item {
+    border-top: 1px solid #3A3020;
+    padding-top: 12px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #7A6A5A;
+    margin-bottom: 4px;
+  }
+
+  .meta-value {
+    font-size: 14px;
+    color: #E0D0C0;
+    font-weight: 400;
+  }
+
+  .hero-right {
+    background: var(--inde-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    position: relative;
+  }
+
+  .brand-duel {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-duel .vs {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--rule);
+    line-height: 1;
+    display: block;
+    margin: 16px 0;
+  }
+
+  .brand-pill {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .pill-inde { background: var(--inde); color: #fff; }
+  .pill-plum { background: var(--plum); color: #fff; }
+
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .stat-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--inde);
+    display: block;
+  }
+
+  .stat-lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--inde);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 48px;
+    color: var(--dark);
+  }
+
+  /* ── CHARTS GRID ── */
+  .charts-section {
+    background: #fff;
+    padding: 100px 80px;
+  }
+
+  .charts-section > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .chart-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: var(--light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chart-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 60px rgba(0,0,0,0.12);
+  }
+
+  .chart-card img {
+    width: 100%;
+    display: block;
+  }
+
+  .chart-caption {
+    padding: 20px 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .chart-caption strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .chart-caption span {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* ── FINDINGS ── */
+  .findings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .finding-card {
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .finding-card.inde-card {
+    background: var(--inde-light);
+    border-left: 4px solid var(--inde);
+  }
+
+  .finding-card.plum-card {
+    background: var(--plum-light);
+    border-left: 4px solid var(--plum);
+  }
+
+  .finding-card.neutral-card {
+    background: #F0F0EE;
+    border-left: 4px solid var(--dark);
+    grid-column: span 2;
+  }
+
+  .finding-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    opacity: 0.12;
+    position: absolute;
+    top: 16px; right: 24px;
+    line-height: 1;
+  }
+
+  .finding-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .inde-card .finding-tag { background: var(--inde); color: #fff; }
+  .plum-card .finding-tag { background: var(--plum); color: #fff; }
+  .neutral-card .finding-tag { background: var(--dark); color: #fff; }
+
+  .finding-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .finding-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+
+  /* ── TOOLS ── */
+  .tools-section {
+    background: var(--dark);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .tools-section h2 { color: #fff; max-width: 1200px; margin: 0 auto 40px; }
+  .tools-section .section-label { max-width: 1200px; margin: 0 auto 16px; }
+
+  .tools-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .tool-chip {
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #3A3020;
+    color: #C0B0A0;
+    background: transparent;
+    transition: all 0.2s;
+  }
+
+  .tool-chip:hover { border-color: var(--inde); color: var(--inde); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--rule);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  footer a {
+    color: var(--inde);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  footer a:hover { text-decoration: underline; }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--dark);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .eyebrow       { animation-delay: 0.1s; }
+  h1             { animation-delay: 0.2s; }
+  .hero-desc     { animation-delay: 0.3s; }
+  .hero-meta     { animation-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { padding: 60px 40px; min-height: 400px; }
+    section, .charts-section, .tools-section { padding: 60px 32px; }
+    .charts-grid, .findings-grid { grid-template-columns: 1fr; }
+    .neutral-card { grid-column: span 1; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+  <div class="hero-left">
+    <p class="eyebrow">Competitive Intelligence · D2C Beauty · India</p>
+    <h1>Indē Wild<br>vs <em>Plum</em><br>Ad Analysis</h1>
+    <p class="hero-desc">A data-driven breakdown of paid ad strategy across 24 creatives — analysing format, copy style, offer type, and creative age to surface strategic gaps between two of India's fastest-growing D2C beauty brands.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Brands</div>
+        <div class="meta-value">Indē Wild · Plum</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Ads Analysed</div>
+        <div class="meta-value">24 total</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tool</div>
+        <div class="meta-value">Python · Matplotlib</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="brand-duel">
+      <span class="brand-pill pill-inde">Indē Wild</span>
+      <span class="vs">vs</span>
+      <span class="brand-pill pill-plum">Plum</span>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-num">24</span>
+          <div class="stat-lbl">Ads Tracked</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">4</span>
+          <div class="stat-lbl">Dimensions</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">6</span>
+          <div class="stat-lbl">Key Findings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CHARTS -->
+<div class="charts-section">
+  <p class="section-label">Data Visualisation</p>
+  <h2>The Charts</h2>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <img src="01_ad_format_comparison.png" alt="Ad Format Distribution">
+      <div class="chart-caption">
+        <strong>Ad Format Distribution</strong>
+        <span>Carousel vs Video vs Single Image — by brand</span>
+      </div>
+    </div>
+    <div class="chart-card">
+      <img src="02_creative_age.png" alt="Creative Age">
+      <div class="chart-caption">
+        <strong>Creative Age</strong>
+        <span>Average weeks running — signals top-performing creatives</span>
+      </div>
+    </div>
+    <div class="chart-card">
+      <img src="03_offer_breakdown.png" alt="Offer Type Breakdown">
+      <div class="chart-caption">
+        <strong>Offer Type Breakdown</strong>
+        <span>Discount vs free gift vs no offer — acquisition strategy</span>
+      </div>
+    </div>
+    <div class="chart-card">
+      <img src="04_copy_style_frequency.png" alt="Copy Style Frequency">
+      <div class="chart-caption">
+        <strong>Copy Style Frequency</strong>
+        <span>Messaging approach — ingredient-led vs lifestyle vs offer-led</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINDINGS -->
+<section>
+  <p class="section-label">Strategic Analysis</p>
+  <h2>Key Findings</h2>
+  <div class="findings-grid">
+
+    <div class="finding-card inde-card">
+      <div class="finding-num">01</div>
+      <span class="finding-tag">Format</span>
+      <h3>Carousel vs Video — Two Different Funnels</h3>
+      <p>Indē Wild runs mostly carousels, targeting high-intent scrollers who swipe through product details. Plum runs 100% video, optimising for Reels placement and cheaper CPM. Same category, completely different funnel stages being targeted.</p>
+    </div>
+
+    <div class="finding-card plum-card">
+      <div class="finding-num">02</div>
+      <span class="finding-tag">Acquisition</span>
+      <h3>Plum Has a New User Funnel. Indē Wild Doesn't.</h3>
+      <p>Plum runs dedicated acquisition ads — a ₹599 trial kit and a free welcome kit — to lower the barrier for first-time buyers. Indē Wild's only visible offer is 20% off a full-price product. No low-risk entry point for new users.</p>
+    </div>
+
+    <div class="finding-card inde-card">
+      <div class="finding-num">03</div>
+      <span class="finding-tag">Creative Age</span>
+      <h3>Long-Running Ads Signal Top ROAS Performers</h3>
+      <p>Indē Wild's two longest-running ads are both POV carousel variants — strong signal that the format + hook combination is their most efficient creative. Brands kill underperforming ads within 2–3 weeks; longevity = performance.</p>
+    </div>
+
+    <div class="finding-card plum-card">
+      <div class="finding-num">04</div>
+      <span class="finding-tag">Distribution</span>
+      <h3>Blinkit vs Flipkart — Different Distribution Bets</h3>
+      <p>Indē Wild routes traffic to Blinkit, betting on quick-commerce impulse buying. Plum sends to both its own site and Flipkart, signalling marketplace dependence. Two completely different distribution philosophies visible directly in ad destinations.</p>
+    </div>
+
+    <div class="finding-card neutral-card">
+      <div class="finding-num">05</div>
+      <span class="finding-tag">Brand Identity</span>
+      <h3>Locked Visual Identity vs Volume Strategy — The Clearest Gap</h3>
+      <p>Indē Wild's entire ad library looks like one mood board: consistent beige/cream tones, clean product shots, minimal design. Plum switches between cinematic brand videos, raw UGC face-cams, and bold discount graphics in the same feed. Indē Wild is building a brand. Plum is optimising for reach. Both are valid — but they signal very different stages of brand maturity.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS -->
+<div class="tools-section">
+  <p class="section-label" style="color: var(--inde);">Built With</p>
+  <h2>Tools & Methods</h2>
+  <div class="tools-row">
+    <span class="tool-chip">Python</span>
+    <span class="tool-chip">pandas</span>
+    <span class="tool-chip">matplotlib</span>
+    <span class="tool-chip">Google Colab</span>
+    <span class="tool-chip">Meta Ads Library</span>
+    <span class="tool-chip">GitHub</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Kavya Sinha</div>
+  <div style="display:flex; gap: 32px;">
+    <a href="https://www.linkedin.com/in/kavya-sinha-009901216/" target="_blank">LinkedIn →</a>
+    <a href="https://github.com/kav0309/ad-creative-analysis" target="_blank">GitHub Repo →</a>
+  </div>
+</footer>
+
+</body>
+</html>
