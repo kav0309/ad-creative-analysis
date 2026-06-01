@@ -4,7 +4,7 @@ A Python-based competitive intelligence project analysing the paid ad strategies
 
 ---
 
-## 📊 Charts
+## Charts
 
 ### Ad Format Distribution
 ![Ad Format](01_ad_format_comparison.png)
@@ -20,7 +20,7 @@ A Python-based competitive intelligence project analysing the paid ad strategies
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
 **1. Plum runs 100% video. Indē Wild runs mostly carousels.**
 Every single Plum ad is a video — a deliberate bet on Reels placement for cheaper CPM and higher reach. Indē Wild's carousel strategy targets higher-intent scrollers who will swipe through product details. Two brands, two completely different funnel stages.
@@ -39,7 +39,7 @@ Indē Wild's entire ad library looks like one mood board — consistent beige/cr
 
 ---
 
-## 🛠 Tools Used
+##  Tools Used
 
 - Python (pandas, matplotlib)
 - Google Colab
@@ -47,7 +47,7 @@ Indē Wild's entire ad library looks like one mood board — consistent beige/cr
 
 ---
 
-## 📁 Files
+##  Files
 
 | File | Description |
 |------|-------------|
@@ -59,7 +59,7 @@ Indē Wild's entire ad library looks like one mood board — consistent beige/cr
 
 ---
 
-## 👤 Author
+##  Author
 
 **Kavya Sinha**
 [LinkedIn](https://www.linkedin.com/in/kavya-sinha-009901216/)
